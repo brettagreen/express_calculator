@@ -47,7 +47,7 @@ app.get('/mode', function(req, res) {
 app.get('/all', function(req, res) {
 	const nums = checkNums(req.query.nums);
 
-	const json = {response: {operation: "all", mean: getMean(nums)/nums.length, median: getMedian(nums), mode: getMode(nums) }};
+	const json = {response: {operation: "all", mean: getMean(nums), median: getMedian(nums), mode: getMode(nums) }};
 
 	if (req.query.save === "true") {
 		writeToFile(json);
